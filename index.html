@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air-Conditioning Installation Report</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.29/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>AIR-CONDITIONING INSTALLATION SUMMARY REPORT</h1>
+            <div class="project-info">
+                <p><strong>Project Name:</strong> City School Yangon Project</p>
+                <p><strong>Location:</strong> Ground Floor to 4th Floor</p>
+                <p><strong>Total AC Units:</strong> 187 Units</p>
+            </div>
+            <div class="btn-group">
+                <button onclick="exportToExcel()" class="btn btn-excel">📥 Download Excel</button>
+                <button onclick="exportToPDF()" class="btn btn-pdf">📄 Download PDF</button>
+            </div>
+        </header>
+
+        <section class="table-section">
+            <h2>1. Floor-wise Summary</h2>
+            <table id="summaryTable">
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Floor Level</th>
+                        <th>Total Rooms</th>
+                        <th>Total AC (Units)</th>
+                        <th>Installation Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Ground Floor</td><td>13</td><td>33</td><td><span class="status-progress">On Progress</span></td></tr>
+                    <tr><td>2</td><td>First Floor</td><td>15</td><td>36</td><td><span class="status-progress">On Progress</span></td></tr>
+                    <tr><td>3</td><td>Second Floor</td><td>16</td><td>43</td><td><span class="status-progress">On Progress</span></td></tr>
+                    <tr><td>4</td><td>Third Floor</td><td>12</td><td>40</td><td><span class="status-progress">On Progress</span></td></tr>
+                    <tr><td>5</td><td>Fourth Floor</td><td>10</td><td>35</td><td><span class="status-progress">On Progress</span></td></tr>
+                    <tr class="total-row">
+                        <td></td><td>Total</td><td>66</td><td>187</td><td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="table-section">
+            <h2>2. Detailed Room-by-Room Report (Sample)</h2>
+            <table id="detailTable">
+                <thead>
+                    <tr>
+                        <th>Room Name</th>
+                        <th>AC Qty</th>
+                        <th>Brand</th>
+                        <th>AC Type</th>
+                        <th>IDU Serial No.</th>
+                        <th>ODU Serial No.</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>M&E Control Room</td>
+                        <td>1</td>
+                        <td>SUMMIT</td>
+                        <td>Wall-Mounted</td>
+                        <td>FCU-G-01</td>
+                        <td>CU-G-01</td>
+                        <td><span class="status-done">100% Done</span></td>
+                    </tr>
+                    <tr>
+                        <td>Playground</td>
+                        <td>5</td>
+                        <td>DAIKIN</td>
+                        <td>Ceiling Cassette</td>
+                        <td>FCU-G-02</td>
+                        <td>CU-G-02</td>
+                        <td><span class="status-done">100% Done</span></td>
+                    </tr>
+                    <tr>
+                        <td>Walkway</td>
+                        <td>2</td>
+                        <td>CHIGO</td>
+                        <td>Ceiling Cassette</td>
+                        <td>FCU-G-05</td>
+                        <td>CU-G-05</td>
+                        <td><span class="status-done">100% Done</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
